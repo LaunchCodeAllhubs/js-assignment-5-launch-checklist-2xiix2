@@ -17,24 +17,31 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) {
-    let pilot = document.querySelector(input["name=pilotName"]);
-    let copilot = document.querySelector(input["name=copilotName"]);
-    let fuelLevel = document.querySelector(input["name=fuelLevel"]);
-    let cargoMass = document.querySelector(input["name=cargoMass"]);
-    console.log(pilot);
-  if (testInput == "" || testInput == "") {
+    // let pilot = document.querySelector(input["name=pilotName"]);
+    // let copilot = document.querySelector(input["name=copilotName"]);
+    // let fuelLevel = document.querySelector(input["name=fuelLevel"]);
+    // let cargoMass = document.querySelector(input["name=cargoMass"]);
+    // console.log(pilot);
+  if (testInput === "") {
     return "Empty";
-  } 
-  if (isNaN(testInput)) {
+  } else if (isNaN(testInput)) {
     return "Not a Number";
-  }
-  if (!isNaN(testInput)) {
-    "Is a Number";
+  } else {}(!isNaN(testInput)) {
+    return "Is a Number";
   }
 }
-validateInput(chris)
+
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+   const launchStatus = document.getElementById("launchStatus");
+   const pilotStatus = document.getElementById("pilotStatus");
+   const copilotStatus = document.getElementById("copilotStatus");
+   const fuelStatus = document.getElementById("fuelStatus");
+   const cargoStatus = document.getElementById("cargoStatus");
+
+   if (validateInput(pilot.value) === "Empty" || validateInput(copilot.value) === "Empty" || validateInput(fuelLevel.value) === "Empty" || validateInput(cargoStatus.value) === "Empty") {
+    window.alert("All fields required, Please fill in field");
+   } 
    
 }
 
